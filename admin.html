@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CivicWorld Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <!-- NAVBAR -->
+
+    <nav class="admin-nav">
+
+        <div class="admin-logo">
+            CivicWorld
+        </div>
+
+        <div class="admin-label">
+            ADMIN DASHBOARD
+        </div>
+
+    </nav>
+
+
+    <!-- DASHBOARD -->
+
+    <main class="admin-container">
+
+
+        <div class="admin-heading">
+
+            <div>
+
+                <span>CIVIC INTELLIGENCE</span>
+
+                <h1>Locality Dashboard</h1>
+
+                <p>
+                    Understand community feedback and
+                    public infrastructure needs.
+                </p>
+
+            </div>
+
+
+            <div class="admin-status">
+
+                <span class="status-dot"></span>
+
+                Demo Data
+
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <section class="admin-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🗣️
+                </div>
+
+                <div>
+
+                    <p>Total Feedback</p>
+
+                    <h2>248</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🚨
+                </div>
+
+                <div>
+
+                    <p>Reported Problems</p>
+
+                    <h2>86</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <p>Suggestions</p>
+
+                    <h2>54</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div>
+
+                    <p>Resolved</p>
+
+                    <h2>127</h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- MAIN GRID -->
+
+        <section class="admin-grid">
+
+
+            <!-- TOP ISSUES -->
+
+            <div class="admin-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>Top Community Issues</h3>
+
+                        <p>
+                            Based on demo citizen reports
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="issue-row">
+
+                    <div class="issue-info">
+
+                        <span>💡</span>
+
+                        <div>
+
+                            <strong>Street Lighting</strong>
+
+                            <small>
+                                34 reports
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="issue-badge">
+                        High
+                    </span>
+
+                </div>
+
+
+                <div class="issue-row">
+
+                    <div class="issue-info">
+
+                        <span>🛣️</span>
+
+                        <div>
+
+                            <strong>Road / Path</strong>
+
+                            <small>
+                                27 reports
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="issue-badge">
+                        Medium
+                    </span>
+
+                </div>
+
+
+                <div class="issue-row">
+
+                    <div class="issue-info">
+
+                        <span>🧹</span>
+
+                        <div>
+
+                            <strong>Cleanliness</strong>
+
+                            <small>
+                                19 reports
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="issue-badge">
+                        Medium
+                    </span>
+
+                </div>
+
+
+                <div class="issue-row">
+
+                    <div class="issue-info">
+
+                        <span>💧</span>
+
+                        <div>
+
+                            <strong>Water</strong>
+
+                            <small>
+                                11 reports
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="issue-badge">
+                        Low
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI SUMMARY -->
+
+            <div class="admin-card ai-summary-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>🤖 AI Civic Summary</h3>
+
+                        <p>
+                            Demo AI-generated overview
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-summary" id="aiSummary">
+
+    <p>
+        Loading civic intelligence...
+    </p>
+
+</div>
+
+<button
+    onclick="generateCivicSummary()"
+    style="
+        display:block;
+        margin:20px 0;
+        padding:12px 20px;
+        background:white;
+        color:#111827;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        font-size:15px;
+        font-weight:bold;
+    ">
+    🤖 Analyze Reports
+</button>
+
+
+                <div class="ai-note">
+
+                    AI assists with organizing information.
+                    Final decisions remain with authorized
+                    officials.
+
+                </div>
+
+           </div>
+
+
+            <!-- SIMILAR REPORTS -->
+
+            <div class="admin-card">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <h3>🔗 Similar Citizen Reports</h3>
+
+                        <p>
+                            AI-grouped recurring community issues
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div id="similarReports">
+
+                    <p>
+                        Submit multiple reports to see AI grouping.
+                    </p>
+
+                </div>
+
+            </div>
+
+<!-- AI PRIORITY INSIGHTS -->
+
+<div class="admin-card">
+
+    <div class="card-heading">
+
+        <div>
+
+            <h3>⚡ AI Priority Insights</h3>
+
+            <p>
+                AI-assisted signals based on recurring reports
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="priorityInsights">
+
+        <p>
+            Analyzing community reports...
+        </p>
+
+    </div>
+
+    <div class="ai-note">
+
+        Priority is an informational signal.
+        Final decisions remain with authorized officials.
+
+    </div>
+
+</div>
+
+<!-- CIVIC PRIORITY MAP -->
+
+<div class="admin-card">
+
+    <div class="card-heading">
+
+        <div>
+
+            <h3>🗺️ Civic Priority Map</h3>
+
+            <p>
+                AI-assisted view of recurring community concerns
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="priorityMap">
+
+        <div class="priority-map-placeholder">
+
+            <div class="map-grid">
+
+                <div class="map-zone">
+                    🏥 Hospital Area
+                </div>
+
+                <div class="map-zone">
+                    🌳 Park Area
+                </div>
+
+                <div class="map-zone">
+                    🏫 School Area
+                </div>
+
+                <div class="map-zone">
+                    🚌 Bus Stop Area
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ai-note">
+
+        This visualization highlights recurring reports.
+        It does not automatically determine government action.
+
+    </div>
+
+</div>
+
+        </section>
+
+
+        <!-- REPORT TABLE -->
+
+        <section class="admin-card reports-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h3>Recent Citizen Reports</h3>
+
+                    <p>
+                        Latest demo submissions
+                    </p>
+
+                </div>
+
+
+                <button class="filter-button">
+                    Filter
+                </button>
+
+            </div>
+
+
+            <div class="reports-table">
+
+                <div class="report-header">
+
+                    <span>Issue</span>
+
+                    <span>Category</span>
+
+                    <span>Location</span>
+
+                    <span>Status</span>
+
+                </div>
+
+
+                <div class="report-row">
+
+                    <span>
+                        Street light not working
+                    </span>
+
+                    <span>
+                        Lighting
+                    </span>
+
+                    <span>
+                        Near Park
+                    </span>
+
+                    <span class="status submitted">
+                        Submitted
+                    </span>
+
+                </div>
+
+
+                <div class="report-row">
+
+                    <span>
+                        Broken pathway
+                    </span>
+
+                    <span>
+                        Road / Path
+                    </span>
+
+                    <span>
+                        Near School
+                    </span>
+
+                    <span class="status progress">
+                        In Progress
+                    </span>
+
+                </div>
+
+
+                <div class="report-row">
+
+                    <span>
+                        Cleanliness issue
+                    </span>
+
+                    <span>
+                        Cleanliness
+                    </span>
+
+                    <span>
+                        Bus Stop
+                    </span>
+
+                    <span class="status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+<script src="admin.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CivicWorld | Explore Your Locality</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="data.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Civic<span>World</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#explore">Explore</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="nav-button" onclick="openAssistant()">
+            Ask Civic AI 
+        </button>
+        
+        <a href="admin.html" class="admin-link">Admin Dashboard</a>
+        </button>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <!-- Civic Network Background -->
+<div class="civic-network" aria-hidden="true">
+    <div class="network-grid"></div>
+
+    <div class="network-line line-1"></div>
+    <div class="network-line line-2"></div>
+    <div class="network-line line-3"></div>
+    <div class="network-line line-4"></div>
+    <div class="network-line line-5"></div>
+
+    <span class="network-node node-1"></span>
+    <span class="network-node node-2"></span>
+    <span class="network-node node-3"></span>
+    <span class="network-node node-4"></span>
+    <span class="network-node node-5"></span>
+
+    <span class="data-pulse pulse-1"></span>
+    <span class="data-pulse pulse-2"></span>
+    <span class="data-pulse pulse-3"></span>
+</div>
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✦ AI-Powered Civic Platform
+            </div>
+
+            <h1>
+                Explore your locality.
+                <br>
+                <span>Understand your community.</span>
+            </h1>
+
+            <p>
+                Discover public facilities, explore your surroundings,
+                share feedback and help build better communities.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <span>🔎</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search hospitals, parks, schools..."
+                >
+
+                <button onclick="searchFacility()">
+                    Search
+                </button>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-button"
+                    onclick="exploreLocality()">
+                    🗺️ Explore Locality
+                </button>
+
+                <button
+                    class="secondary-button"
+                    onclick="openAssistant()">
+                    🤖 Ask Civic AI
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAP PREVIEW -->
+         <div class="map-preview">
+<div id="city3d"></div>
+
+<div class="map-top-label">
+    DEMO LOCALITY
+</div>
+
+<div class="map-help">
+    🖱️ Drag to rotate
+    <br>
+    🔍 Scroll to zoom
+    <br>
+    👆 Click a facility
+</div>
+
+<div class="facility-popup" id="facilityPopup">
+
+    <button
+        class="popup-close"
+        onclick="closeFacility()">
+        ×
+    </button>
+
+    <div id="facilityIcon"></div>
+
+    <h3 id="facilityName"></h3>
+
+    <p id="facilityInfo"></p>
+
+    <button
+        class="popup-button"
+        onclick="facilityAction()">
+        View Details
+    </button>
+
+    <div class="facility-details-panel" id="facilityDetailsPanel">
+
+    <button
+        class="details-close"
+        onclick="closeFacilityDetails()">
+        ×
+    </button>
+
+    <div class="details-icon" id="detailsIcon">🏢</div>
+
+    <h2 id="detailsName">Facility Name</h2>
+
+    <p class="details-type" id="detailsType">
+        Public Facility
+    </p>
+
+    <div class="details-item">
+        <strong>🕐 Timings</strong>
+        <span id="detailsTimings">Available information</span>
+    </div>
+
+    <div class="details-item">
+        <strong>♿ Accessibility</strong>
+        <span id="detailsAccessibility">
+            Accessible entrance
+        </span>
+    </div>
+
+    <div class="details-item">
+        <strong>🛠️ Services</strong>
+        <span id="detailsServices">
+            Public services
+        </span>
+    </div>
+
+    <div class="details-item">
+        <strong>📍 Location</strong>
+        <span id="detailsLocation">
+            Demo Locality
+        </span>
+    </div>
+
+    <div class="details-actions">
+
+        <button onclick="findFacilityOnMap()">
+            📍 Find on Map
+        </button>
+
+        <button onclick="giveFacilityFeedback()">
+            💬 Give Feedback
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+        
+    </section>
+
+
+    <!-- EXPLORE SECTION -->
+
+    <section class="explore-section" id="explore">
+
+        <div class="section-heading">
+
+            <span>YOUR LOCALITY</span>
+
+            <h2>
+                Everything around you,
+                <br>
+                in one place.
+            </h2>
+
+            <p>
+                Explore public facilities through an interactive
+                locality experience.
+            </p>
+
+        </div>
+
+
+        <div class="facility-grid" id="facilities">
+
+            <div class="facility-card">
+
+                <div class="facility-icon">🏥</div>
+
+                <h3>Hospitals</h3>
+
+                <p>
+                    Find hospitals, departments,
+                    timings and facilities.
+                </p>
+
+                <button onclick="showMessage('Hospitals')">
+                    Explore →
+                </button>
+
+            </div>
+
+
+            <div class="facility-card">
+
+                <div class="facility-icon">🌳</div>
+
+                <h3>Parks</h3>
+
+                <p>
+                    Discover nearby parks,
+                    facilities and accessibility.
+                </p>
+
+                <button onclick="showMessage('Parks')">
+                    Explore →
+                </button>
+
+            </div>
+
+
+            <div class="facility-card">
+
+                <div class="facility-icon">🏫</div>
+
+                <h3>Schools</h3>
+
+                <p>
+                    Explore public schools and
+                    available facilities.
+                </p>
+
+                <button onclick="showMessage('Schools')">
+                    Explore →
+                </button>
+
+            </div>
+
+
+            <div class="facility-card">
+
+                <div class="facility-icon">🏤</div>
+
+                <h3>Public Services</h3>
+
+                <p>
+                    Find post offices, transport
+                    and other civic facilities.
+                </p>
+
+                <button onclick="showMessage('Public Services')">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CITIZEN PARTICIPATION -->
+
+<section class="citizen-section" id="participate">
+
+    <div class="section-heading">
+
+        <span>CITIZEN PARTICIPATION</span>
+
+        <h2>Help improve your locality</h2>
+
+        <p>
+            Share feedback, report problems, or suggest what your
+            community needs.
+        </p>
+
+    </div>
+
+
+    <div class="citizen-cards">
+
+        <!-- FEEDBACK -->
+
+        <div class="citizen-card">
+
+            <div class="citizen-icon">🗣️</div>
+
+            <h3>Give Feedback</h3>
+
+            <p>
+                Tell us what you like or what could be improved
+                in your locality.
+            </p>
+
+            <button onclick="openCitizenForm('feedback')">
+                Give Feedback
+            </button>
+
+        </div>
+
+
+        <!-- REPORT -->
+
+        <div class="citizen-card">
+
+            <div class="citizen-icon">🚨</div>
+
+            <h3>Report a Problem</h3>
+
+            <p>
+                Report issues such as broken lights, roads,
+                cleanliness or damaged facilities.
+            </p>
+
+            <button onclick="openCitizenForm('problem')">
+                Report Problem
+            </button>
+
+        </div>
+
+
+        <!-- SUGGEST -->
+
+        <div class="citizen-card">
+
+            <div class="citizen-icon">💡</div>
+
+            <h3>Suggest a Facility</h3>
+
+            <p>
+                Suggest a park, bus stop, healthcare facility
+                or another public service.
+            </p>
+
+            <button onclick="openCitizenForm('suggestion')">
+                Make Suggestion
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CITIZEN FORM -->
+
+<div class="citizen-modal" id="citizenModal">
+
+    <div class="citizen-modal-box">
+
+        <button
+            class="citizen-close"
+            onclick="closeCitizenForm()">
+            ×
+        </button>
+
+
+        <div class="citizen-form-icon" id="citizenFormIcon">
+            🗣️
+        </div>
+
+
+        <h2 id="citizenFormTitle">
+            Give Feedback
+        </h2>
+
+
+        <p id="citizenFormSubtitle">
+            Tell us about your experience.
+        </p>
+
+
+        <!-- CATEGORY -->
+
+        <label>Category</label>
+
+        <select id="citizenCategory">
+
+            <option value="">
+                Select a category
+            </option>
+
+            <option>Cleanliness</option>
+
+            <option>Road / Path</option>
+
+            <option>Street Lighting</option>
+
+            <option>Water</option>
+
+            <option>Accessibility</option>
+
+            <option>Public Safety</option>
+
+            <option>Facility</option>
+
+            <option>Other</option>
+
+        </select>
+
+        <!-- LOCATION -->
+
+<label>Location</label>
+
+<select id="citizenLocation">
+
+    <option value="">
+        Select a location
+    </option>
+
+    <option>Hospital Area</option>
+
+    <option>Park Area</option>
+
+    <option>School Area</option>
+
+    <option>Bus Stop Area</option>
+
+    <option>Post Office Area</option>
+
+    <option>My Home Area</option>
+
+    <option>Other</option>
+
+</select>
+
+
+        <!-- FEEDBACK -->
+
+        <label>Your message</label>
+
+        <textarea
+            id="citizenMessage"
+            placeholder="Describe the issue, feedback or suggestion...">
+        </textarea>
+
+
+        <!-- OPTIONAL PHOTO -->
+
+        <label>Photo (optional)</label>
+
+        <input
+            type="file"
+            id="citizenPhoto"
+            accept="image/*">
+
+
+        <!-- SUBMIT -->
+
+        <button
+            class="citizen-submit"
+            onclick="submitCitizenForm()">
+
+            Submit
+
+        </button>
+
+
+        <p class="privacy-note">
+            🔒 Your personal information will not be publicly displayed.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- YOU ASKED - WE HEARD -->
+
+<section class="citizen-status-section">
+
+    <div class="section-heading">
+
+        <h2>You Asked → We Heard</h2>
+
+        <p>
+            Track the status of your civic reports.
+        </p>
+
+    </div>
+
+    <div id="myReports">
+
+        <p>
+            Your submitted reports will appear here.
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- AI ASSISTANT POPUP -->
+
+    <div class="assistant" id="assistant">
+
+        <div class="assistant-box">
+
+            <button
+                class="close-button"
+                onclick="closeAssistant()">
+                ×
+            </button>
+
+            <div class="assistant-icon">
+                🤖
+            </div>
+
+            <h2>Civic AI</h2>
+
+            <p>
+                Ask me about public facilities in your locality.
+            </p>
+
+            <input
+                id="aiInput"
+                type="text"
+                placeholder="e.g. Find a hospital..."
+            >
+
+            <button
+                class="primary-button"
+                onclick="askAI()">
+                Ask
+            </button>
+
+            <div id="aiResponse"></div>
+
+        </div>
+
+    </div>
+
+
+    <footer id="about">
+
+        <div class="logo">
+            Civic<span>World</span>
+        </div>
+
+        <p>
+            Explore. Participate. Improve.
+        </p>
+
+        <small>
+            Prototype • Demo Locality
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+    
+
+    
+</body>
+
+</html>

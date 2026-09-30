@@ -1,0 +1,4224 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --cw-bg: #06121a;
+    --cw-bg-deep: #02070b;
+    --cw-surface: rgba(10, 27, 37, 0.62);
+    --cw-border: rgba(255, 255, 255, 0.12);
+    --cw-text: #f5fbff;
+    --cw-muted: rgba(230, 244, 250, 0.68);
+    --cw-accent: #36d6c3;
+    --cw-accent-light: #7cf7e7;
+    --cw-blue: #4da8ff;
+    --cw-glow: rgba(54, 214, 195, 0.28);
+    --cw-radius: 18px;
+    --cw-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: white;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+
+    position: sticky;
+    top: 14px;
+    z-index: 50;
+
+    border: 1px solid var(--cw-border);
+    border-radius: 22px;
+
+    background: rgba(6, 18, 26, 0.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.28),
+        0 0 25px var(--cw-glow);
+
+    transition: 0.35s var(--cw-ease);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #36d6c3;
+}
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: #36d6c3;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.nav-button {
+    padding: 11px 18px;
+    border: 1px solid #63d6ff;
+    background: transparent;
+    color: #63d6ff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background:
+    radial-gradient(
+        circle at 78% 35%,
+        rgba(54, 214, 195, 0.16),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 35% 80%,
+        rgba(77, 168, 255, 0.12),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #02070b 0%,
+        #061824 55%,
+        #07111f 100%
+    );
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid rgba(99,214,255,0.3);
+    border-radius: 30px;
+    color: #63d6ff;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.02;
+    letter-spacing: -2px;
+font-weight: 800;
+text-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #63d6ff;
+}
+
+.hero p {
+    color: #aebdce;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: rgba(230, 244, 250, 0.72);
+    max-width: 720px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 665px;
+
+    padding: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    background: rgba(13, 31, 44, 0.72);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    transition: 0.3s ease;
+}
+
+.search-box span {
+    padding-left: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+    font-size: 16px;
+
+    padding: 14px;
+}
+
+.search-box input::placeholder {
+    color: rgba(230, 244, 250, 0.45);
+}
+
+.search-box button {
+    border: none;
+    border-radius: 13px;
+
+    padding: 14px 25px;
+
+    background: linear-gradient(
+        135deg,
+        #36d6c3,
+        #4da8ff
+    );
+
+    color: #021017;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(54, 214, 195, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(54, 214, 195, 0.35);
+}
+
+
+/* BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons button {
+    padding: 14px 24px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-3px);
+}
+
+.primary-button,
+.secondary-button {
+    padding: 14px 20px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.primary-button {
+    background: #63d6ff;
+    color: #06111d;
+}
+
+.secondary-button {
+    background: #142437;
+    color: white;
+    border: 1px solid #30455b;
+}
+
+
+/* MAP */
+
+.map-preview {
+    position: relative;
+
+    width: 470px;
+    height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    background: rgba(10, 27, 37, 0.55);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 45px rgba(54, 214, 195, 0.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.map-preview::before {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 35px;
+    background: #182f3a;
+    transform: rotate(-25deg);
+    top: 190px;
+    left: -100px;
+}
+
+.map-preview::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 150%;
+    background: #182f3a;
+    transform: rotate(35deg);
+    left: 210px;
+    top: -100px;
+}
+
+.map-building {
+    position: absolute;
+    z-index: 3;
+    width: 80px;
+    height: 70px;
+    border-radius: 12px;
+    background: #20384c;
+    border: 1px solid #496276;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.map-building small {
+    font-size: 10px;
+    color: #d7e4ef;
+    margin-top: 4px;
+}
+
+.hospital {
+    top: 65px;
+    right: 70px;
+}
+
+.park {
+    bottom: 70px;
+    left: 65px;
+}
+
+.school {
+    top: 170px;
+    left: 55px;
+}
+
+.post {
+    bottom: 55px;
+    right: 75px;
+}
+
+.home-marker {
+    position: absolute;
+    z-index: 5;
+    top: 185px;
+    right: 195px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.home-marker span {
+    display: block;
+    font-size: 10px;
+    color: #63d6ff;
+}
+
+.road {
+    position: absolute;
+    z-index: 1;
+    background: #314856;
+}
+
+.road-one {
+    width: 120%;
+    height: 28px;
+    top: 200px;
+    left: -50px;
+    transform: rotate(-12deg);
+}
+
+.road-two {
+    width: 25px;
+    height: 120%;
+    top: -50px;
+    left: 250px;
+    transform: rotate(18deg);
+}
+
+
+/* EXPLORE */
+
+.explore-section {
+    padding: 100px 7%;
+    background: #0a1727;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+
+.section-heading span,
+.participation span {
+    color: #63d6ff;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.participation h2 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.section-heading p,
+.participation p {
+    color: #9eb0c4;
+    line-height: 1.7;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.facility-card {
+    padding: 24px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 38, 51, 0.78),
+            rgba(6, 20, 29, 0.72)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.20);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(54, 214, 195, 0.35);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.30),
+        0 0 25px rgba(54, 214, 195, 0.08);
+}
+
+.facility-card:hover {
+    transform: translateY(-7px);
+    border-color: #63d6ff;
+}
+
+.facility-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.facility-card h3 {
+    margin-bottom: 10px;
+}
+
+.facility-card p {
+    color: #9eb0c4;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.facility-card button {
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    color: #63d6ff;
+    cursor: pointer;
+}
+
+
+/* PARTICIPATION */
+
+.participation {
+    padding: 100px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.action-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 350px;
+}
+
+.action-cards button {
+    text-align: left;
+    background: #101f31;
+    color: white;
+    border: 1px solid #23394f;
+    padding: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.action-cards button:hover {
+    border-color: #63d6ff;
+}
+
+.action-cards strong,
+.action-cards small {
+    display: block;
+    margin-left: 35px;
+}
+
+.action-cards strong {
+    margin-top: -22px;
+}
+
+.action-cards small {
+    color: #8fa3b7;
+    margin-top: 7px;
+}
+
+
+/* AI ASSISTANT */
+
+.assistant {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+}
+
+.assistant-box {
+    width: 420px;
+    background: #102033;
+    border: 1px solid #35516b;
+    border-radius: 20px;
+    padding: 35px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.assistant-icon {
+    font-size: 40px;
+}
+
+.assistant-box h2 {
+    margin: 10px 0;
+}
+
+.assistant-box p {
+    color: #9eb0c4;
+    margin-bottom: 20px;
+}
+
+.assistant-box input {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    border: 1px solid #344d64;
+    background: #091625;
+    color: white;
+    margin-bottom: 12px;
+}
+
+#aiResponse {
+    margin-top: 20px;
+    color: #63d6ff;
+    line-height: 1.6;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 40px 7%;
+    border-top: 1px solid #203247;
+    color: #8fa3b7;
+}
+
+footer small {
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .map-preview {
+        width: 100%;
+        max-width: 470px;
+    }
+
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .participation {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+}
+/* =========================================
+   3D CIVIC MAP
+========================================= */
+
+#city3d {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#city3d canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* MAP LABEL */
+
+.map-top-label {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    left: 15px;
+
+    padding: 7px 12px;
+
+    background: rgba(5, 15, 25, 0.75);
+    border: 1px solid rgba(99, 214, 255, 0.3);
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: #63d6ff;
+}
+
+
+/* MAP HELP */
+
+.map-help {
+    position: absolute;
+    z-index: 10;
+
+    bottom: 15px;
+    left: 15px;
+
+    font-size: 10px;
+    line-height: 1.7;
+
+    color: #b9c9d8;
+
+    background: rgba(5, 15, 25, 0.65);
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+}
+
+
+/* FACILITY POPUP */
+
+.facility-popup {
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: 55px;
+    right: 15px;
+
+    width: 175px;
+
+    padding: 18px;
+
+    background: rgba(10, 27, 43, 0.96);
+
+    border: 1px solid #3a627d;
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+    display: none;
+}
+
+
+.facility-popup h3 {
+
+    margin: 8px 0;
+
+    font-size: 16px;
+}
+
+
+.facility-popup p {
+
+    color: #a9bacb;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+
+.popup-close {
+
+    position: absolute;
+
+    right: 8px;
+    top: 5px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.popup-button {
+
+    width: 100%;
+
+    padding: 9px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #63d6ff;
+
+    color: #06111d;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+/* =========================================
+   FACILITY DETAILS PANEL
+========================================= */
+
+.facility-details-panel {
+    position: fixed;
+    z-index: 100;
+    
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    
+    width: min(420px, 90%);
+    max-height: 80vh;
+    overflow-y: auto;
+    
+    padding: 28px;
+    
+    background: rgba(8, 22, 36, 0.98);
+    
+    border: 1px solid rgba(99, 214, 255, 0.35);
+    border-radius: 20px;
+    
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        0 0 30px rgba(99, 214, 255, 0.08);
+    
+    display: none;
+}
+
+
+/* CLOSE BUTTON */
+
+.details-close {
+    position: absolute;
+    
+    top: 10px;
+    right: 12px;
+    
+    width: 32px;
+    height: 32px;
+    
+    border: none;
+    border-radius: 50%;
+    
+    background: rgba(255, 255, 255, 0.08);
+    
+    color: white;
+    font-size: 20px;
+    
+    cursor: pointer;
+}
+
+
+/* ICON */
+
+.details-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+
+/* NAME */
+
+.facility-details-panel h2 {
+    margin: 0 0 5px;
+    
+    font-size: 24px;
+    color: white;
+}
+
+
+/* TYPE */
+
+.details-type {
+    margin: 0 0 22px;
+    
+    color: #63d6ff;
+    font-size: 13px;
+}
+
+
+/* DETAIL ITEMS */
+
+.details-item {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 5px;
+    
+    padding: 12px 0;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.details-item strong {
+    color: white;
+    font-size: 13px;
+}
+
+
+.details-item span {
+    color: #a9bacb;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* ACTION BUTTONS */
+
+.details-actions {
+    display: flex;
+    gap: 10px;
+    
+    margin-top: 22px;
+}
+
+
+.details-actions button {
+    flex: 1;
+    
+    padding: 11px;
+    
+    border: none;
+    border-radius: 9px;
+    
+    background: #63d6ff;
+    color: #06111d;
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+    cursor: pointer;
+    
+    transition: 0.2s;
+}
+
+
+.details-actions button:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   CITIZEN PARTICIPATION
+========================================= */
+
+.citizen-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.section-heading span {
+    color: #63d6ff;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: #9fb2c4;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+
+/* CARDS */
+
+.citizen-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.citizen-card {
+    background: rgba(15, 35, 52, 0.8);
+    border: 1px solid rgba(99, 214, 255, 0.15);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.citizen-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(99, 214, 255, 0.5);
+}
+
+.citizen-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.citizen-card h3 {
+    margin-bottom: 10px;
+}
+
+.citizen-card p {
+    color: #9fb2c4;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 65px;
+}
+
+.citizen-card button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #63d6ff;
+    color: #06111d;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.citizen-card button:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   CITIZEN MODAL
+========================================= */
+
+.citizen-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.75);
+    padding: 20px;
+}
+
+.citizen-modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 450px;
+
+    background: #0a1b2b;
+    border: 1px solid #31546d;
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.citizen-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.citizen-form-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.citizen-modal-box h2 {
+    margin: 0 0 5px;
+}
+
+.citizen-modal-box > p {
+    color: #9fb2c4;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+
+/* FORM */
+
+.citizen-modal-box label {
+    display: block;
+
+    margin: 15px 0 7px;
+
+    font-size: 12px;
+    color: #c7d5e1;
+}
+
+.citizen-modal-box select,
+.citizen-modal-box textarea,
+.citizen-modal-box input[type="file"] {
+
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #071522;
+    border: 1px solid #29465b;
+
+    border-radius: 8px;
+
+    padding: 11px;
+
+    color: white;
+
+    font-family: inherit;
+}
+
+.citizen-modal-box textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.citizen-modal-box input[type="file"] {
+    font-size: 11px;
+}
+
+.citizen-submit {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #63d6ff;
+    color: #06111d;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.citizen-submit:hover {
+    opacity: 0.85;
+}
+
+.privacy-note {
+    text-align: center;
+    margin-top: 15px !important;
+
+    font-size: 11px !important;
+    color: #71879a !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .citizen-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .citizen-section {
+        padding: 60px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+}
+
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+.admin-page {
+    background: #06111d;
+    color: white;
+    min-height: 100vh;
+}
+
+.admin-nav {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(99, 214, 255, 0.12);
+    background: #081725;
+}
+
+.admin-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #63d6ff;
+}
+
+.admin-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8fa7ba;
+}
+
+.admin-container {
+    width: 86%;
+    max-width: 1250px;
+    margin: 45px auto;
+}
+
+.admin-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.admin-heading span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #63d6ff;
+    font-weight: 700;
+}
+
+.admin-heading h1 {
+    margin: 8px 0;
+    font-size: 34px;
+}
+
+.admin-heading p {
+    color: #91a7b9;
+    margin: 0;
+}
+
+.admin-status {
+    background: rgba(99, 214, 255, 0.08);
+    border: 1px solid rgba(99, 214, 255, 0.2);
+    padding: 9px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #b8c9d5;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #63d6ff;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: #0a1b2b;
+    border: 1px solid #19374d;
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-icon {
+    font-size: 28px;
+}
+
+.stat-card p {
+    margin: 0 0 5px;
+    color: #8da4b6;
+    font-size: 12px;
+}
+
+.stat-card h2 {
+    margin: 0;
+    font-size: 27px;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.admin-card {
+    background: #0a1b2b;
+    border: 1px solid #19374d;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-heading h3 {
+    margin: 0 0 5px;
+}
+
+.card-heading p {
+    margin: 0;
+    color: #8299ab;
+    font-size: 12px;
+}
+
+.issue-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.issue-row:last-child {
+    border-bottom: none;
+}
+
+.issue-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.issue-info > span {
+    font-size: 21px;
+}
+
+.issue-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.issue-info small {
+    display: block;
+    color: #8197a9;
+    margin-top: 4px;
+}
+
+.issue-badge {
+    font-size: 10px;
+    padding: 5px 9px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    color: #c7d5df;
+}
+
+.ai-summary p {
+    color: #b1c2ce;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+.ai-note {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 9px;
+    background: rgba(99, 214, 255, 0.07);
+    border: 1px solid rgba(99, 214, 255, 0.12);
+    color: #8fa9bb;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.reports-card {
+    margin-bottom: 30px;
+}
+
+.filter-button {
+    border: 1px solid #31546d;
+    background: transparent;
+    color: #bcd0dd;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.reports-table {
+    width: 100%;
+}
+
+.report-header,
+.report-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.report-header {
+    padding: 12px 0;
+    color: #6f8799;
+    font-size: 11px;
+    border-bottom: 1px solid #19374d;
+}
+
+.report-row {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+    color: #c1d0da;
+}
+
+.status {
+    display: inline-block;
+    width: fit-content;
+    padding: 5px 9px;
+    border-radius: 12px;
+    font-size: 10px;
+}
+
+.status.submitted {
+    background: rgba(99, 214, 255, 0.1);
+    color: #63d6ff;
+}
+
+.status.progress {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffd166;
+}
+
+.status.completed {
+    background: rgba(76, 175, 80, 0.1);
+    color: #8bdc91;
+}
+
+@media (max-width: 850px) {
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-heading {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .report-header,
+    .report-row {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+    .report-header span:last-child,
+.report-row span:last-child {
+    display: block;
+}
+}
+
+@media (max-width: 550px) {
+
+    .admin-container {
+        width: 92%;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-heading h1 {
+        font-size: 38px;
+    }
+
+    .admin-label {
+        display: none;
+    }
+}
+
+/* =========================================
+   CIVIC PRIORITY MAP
+========================================= */
+
+.priority-map-placeholder {
+    margin-top: 20px;
+    padding: 20px;
+    min-height: 260px;
+    border-radius: 14px;
+    background:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-color: #0b1827;
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    height: 220px;
+}
+
+.map-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    background: rgba(15, 30, 48, 0.9);
+    font-weight: 600;
+    text-align: center;
+}
+
+.reports-table select {
+    min-width: 130px;
+    padding: 8px 10px;
+    background: #07111f !important;
+    color: #ffffff !important;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.reports-table select option {
+    background: #07111f;
+    color: #ffffff;
+}
+
+@keyframes civicRise {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero .hero-content {
+    animation: civicRise 0.9s var(--cw-ease) both;
+}
+
+.hero .map-preview {
+    animation: civicRise 1s var(--cw-ease) 0.15s both;
+}
+
+.facility-card {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(54, 214, 195, 0.35);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.30),
+        0 0 25px rgba(54, 214, 195, 0.08);
+}
+
+/* ===== CIVICWORLD PREMIUM HERO ===== */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content h1 {
+    max-width: 760px;
+}
+
+.hero-content h1 span {
+    color: var(--cw-accent);
+}
+
+.hero-content p {
+    max-width: 650px;
+    color: var(--cw-muted);
+}
+
+.hero-buttons button:first-child {
+    background: linear-gradient(
+        135deg,
+        var(--cw-accent),
+        var(--cw-blue)
+    );
+
+    color: #031116;
+    border: none;
+
+    box-shadow:
+        0 12px 35px rgba(54, 214, 195, 0.22);
+}
+
+.hero-buttons button:first-child:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 16px 45px rgba(54, 214, 195, 0.35);
+}
+
+.hero-buttons button:last-child {
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    backdrop-filter: blur(12px);
+}
+
+.hero-buttons button:last-child:hover {
+    border-color: rgba(54, 214, 195, 0.45);
+    background: rgba(54, 214, 195, 0.07);
+}
+
+/* ===== PREMIUM SECTION HEADINGS ===== */
+
+section h2 {
+    letter-spacing: -1px;
+}
+
+section {
+    position: relative;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(54, 214, 195, 0.05);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+/* ===== CIVICWORLD GLASS FACILITY CARDS ===== */
+
+.facility-card {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 45, 58, 0.82),
+            rgba(5, 19, 28, 0.78)
+        );
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.facility-card::before {
+    content: "";
+
+    position: absolute;
+    top: -80px;
+    right: -80px;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(54, 214, 195, 0.08);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(54, 214, 195, 0.35);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.30),
+        0 0 30px rgba(54, 214, 195, 0.08);
+}
+
+/* ===== FACILITY ICON ===== */
+
+.facility-card .icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(54, 214, 195, 0.10);
+
+    border: 1px solid rgba(54, 214, 195, 0.18);
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover .icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* ===== CIVICWORLD SECTION SPACING ===== */
+
+.facilities {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.participation {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.facilities h2,
+.participation h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+}
+
+/* ===== SUBTLE GLOW ===== */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -180px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(77, 168, 255, 0.07);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+/* ===== PREMIUM NAVIGATION ===== */
+
+nav a {
+    position: relative;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--cw-accent);
+
+    transform: translateX(-50%);
+
+    transition: width 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--cw-accent-light);
+}
+
+nav a:hover::after {
+    width: 70%;
+}
+
+/* ===== NAV BUTTON ===== */
+
+.nav-button {
+    border: 1px solid rgba(54, 214, 195, 0.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(54, 214, 195, 0.16),
+            rgba(77, 168, 255, 0.12)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(54, 214, 195, 0.5);
+
+    box-shadow:
+        0 10px 30px rgba(54, 214, 195, 0.15);
+}
+
+/* ===== PREMIUM 3D LOCALITY ===== */
+
+.map-preview {
+    transform: translateY(0);
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.map-preview:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(54, 214, 195, 0.28);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.42),
+        0 0 45px rgba(54, 214, 195, 0.12);
+}
+
+/* Soft glow behind the locality */
+.map-preview::after {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(54, 214, 195, 0.12),
+            rgba(77, 168, 255, 0.06)
+        );
+    opacity: 0.8;
+}
+
+/* Floating locality label */
+.map-preview .map-label {
+    background: rgba(4, 16, 24, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* ===== PREMIUM 3D LOCALITY ===== */
+
+.map-preview {
+    transform: translateY(0);
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+.map-preview:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(54, 214, 195, 0.28);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.42),
+        0 0 45px rgba(54, 214, 195, 0.12);
+}
+
+/* Soft glow behind the locality */
+.map-preview::after {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(54, 214, 195, 0.12),
+            rgba(77, 168, 255, 0.06)
+        );
+    opacity: 0.8;
+}
+
+/* Floating locality label */
+.map-preview .map-label {
+    background: rgba(4, 16, 24, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* ===== CIVIC AI PREMIUM PANEL ===== */
+
+.assistant {
+    background: rgba(2, 7, 11, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.assistant-box {
+    border: 1px solid rgba(54, 214, 195, 0.18);
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 38, 51, 0.92),
+            rgba(4, 17, 25, 0.94)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(54, 214, 195, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    overflow: hidden;
+}
+
+.assistant-box h3 {
+    letter-spacing: -0.5px;
+}
+
+.assistant-box input {
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: white;
+
+    border-radius: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.assistant-box input:focus {
+    border-color: rgba(54, 214, 195, 0.45);
+
+    background: rgba(54, 214, 195, 0.04);
+}
+
+.assistant-box button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--cw-accent),
+            var(--cw-blue)
+        );
+
+    color: #031116;
+
+    border: none;
+    border-radius: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.assistant-box button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(54, 214, 195, 0.25);
+}
+
+/* ===== CIVICWORLD PREMIUM FOOTER ===== */
+
+footer {
+    position: relative;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(54, 214, 195, 0.07),
+            transparent 35%
+        ),
+        #02070b;
+
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+footer::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 180px;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cw-accent),
+        transparent
+    );
+
+    transform: translateX(-50%);
+}
+
+footer a {
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+footer a:hover {
+    color: var(--cw-accent-light);
+    opacity: 1;
+}
+
+footer p {
+    color: rgba(230, 244, 250, 0.55);
+}
+
+/* ===== FINAL CIVICWORLD FINISH ===== */
+
+section {
+    position: relative;
+}
+
+section:not(.hero) {
+    scroll-margin-top: 100px;
+}
+
+.hero,
+.facilities,
+.participation {
+    overflow: hidden;
+}
+
+/* Soft section divider */
+.facilities {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Better section titles */
+.facilities h2,
+.participation h2 {
+    text-wrap: balance;
+}
+
+/* Smooth buttons everywhere */
+button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Subtle page-wide selection colour */
+::selection {
+    background: rgba(54, 214, 195, 0.30);
+    color: white;
+}
+
+/* =====================================================
+   CIVICWORLD — MOTION / CINEMATIC ANIMATION
+   ===================================================== */
+
+/* ---------- HERO ENTRANCE ---------- */
+
+@keyframes cwFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content > * {
+    opacity: 0;
+    animation: cwFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content > *:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hero-content > *:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.hero-content > *:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.hero-content > *:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.hero-content > *:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+
+/* ---------- 3D LOCALITY FLOAT ---------- */
+
+@keyframes cwFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero .map-preview {
+    animation:
+        cwFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both,
+        cwFloat 6s ease-in-out 1.3s infinite;
+}
+
+
+/* ---------- GLOW PULSE ---------- */
+
+@keyframes cwGlow {
+    0%,
+    100% {
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.30),
+            0 0 25px rgba(54, 214, 195, 0.05);
+    }
+
+    50% {
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.35),
+            0 0 45px rgba(54, 214, 195, 0.16);
+    }
+}
+
+.map-preview {
+    animation:
+        cwGlow 5s ease-in-out infinite;
+}
+
+
+/* ---------- NAVBAR ---------- */
+
+@keyframes cwNavDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    animation:
+        cwNavDrop 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* ---------- BUTTON MOTION ---------- */
+
+button {
+    transition:
+        transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+/* ---------- FACILITY CARD MOTION ---------- */
+
+.facility-card {
+    animation:
+        cwFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.facility-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.facility-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.facility-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.facility-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+/* ---------- CARD ICON ---------- */
+
+.facility-card:hover .icon {
+    animation: cwIconPop 0.4s ease;
+}
+
+@keyframes cwIconPop {
+    50% {
+        transform: scale(1.15) rotate(-4deg);
+    }
+}
+
+
+/* ---------- NAV LINK MOTION ---------- */
+
+nav a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ---------- AI BUTTON GLOW ---------- */
+
+@keyframes cwAIPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(54, 214, 195, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(54, 214, 195, 0.20);
+    }
+}
+
+.nav-button {
+    animation: cwAIPulse 3s ease-in-out infinite;
+}
+
+
+/* ---------- SECTION TITLE ---------- */
+
+@keyframes cwTitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        letter-spacing: 4px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: -1px;
+    }
+}
+
+.facilities h2,
+.participation h2 {
+    animation:
+        cwTitleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* ---------- REDUCE MOTION FOR ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== SCROLL REVEAL EFFECT ===== */
+
+.facilities,
+.participation,
+.facility-grid,
+.facility-card {
+    animation: cwScrollReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+}
+
+@keyframes cwScrollReveal {
+    from {
+        opacity: 0;
+        transform: translateY(45px) scale(0.98);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+
+/* ===== FLOATING BACKGROUND LIGHT ===== */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    left: -180px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background: rgba(54, 214, 195, 0.07);
+
+    filter: blur(100px);
+
+    animation: cwAmbient 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes cwAmbient {
+    from {
+        transform: translate(0, 0) scale(0.9);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translate(100px, 40px) scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* ===== CINEMATIC PARALLAX BACKGROUND ===== */
+
+.hero {
+    isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+    will-change: transform;
+}
+
+.hero::before {
+    animation:
+        cwParallaxGlow 10s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    animation:
+        cwParallaxGlowReverse 12s ease-in-out infinite alternate;
+}
+
+@keyframes cwParallaxGlow {
+    from {
+        transform: translate3d(-20px, 0, 0) scale(0.95);
+    }
+
+    to {
+        transform: translate3d(70px, -35px, 0) scale(1.12);
+    }
+}
+
+@keyframes cwParallaxGlowReverse {
+    from {
+        transform: translate3d(20px, 20px, 0) scale(0.95);
+    }
+
+    to {
+        transform: translate3d(-60px, -30px, 0) scale(1.12);
+    }
+}
+
+
+/* ===== GLASS SHINE ON CARDS ===== */
+
+.facility-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.07),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+
+    pointer-events: none;
+}
+
+.facility-card:hover::after {
+    left: 140%;
+}
+
+/* =====================================================
+   CIVICWORLD — ANIMATED LIVING BACKGROUND
+   ===================================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Keep actual hero content above the animation */
+.hero > * {
+    position: relative;
+    z-index: 3;
+}
+
+/* ---------- MOVING LIGHT ORBS ---------- */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    width: 520px;
+    height: 520px;
+
+    left: -180px;
+    top: 10%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(54, 214, 195, 0.22) 0%,
+            rgba(54, 214, 195, 0.08) 35%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    animation:
+        cwOrbOne 12s ease-in-out infinite alternate;
+}
+
+/* Second moving light */
+.hero::after {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    width: 600px;
+    height: 600px;
+
+    right: -220px;
+    top: -120px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(77, 168, 255, 0.20) 0%,
+            rgba(77, 168, 255, 0.07) 35%,
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        cwOrbTwo 15s ease-in-out infinite alternate;
+}
+
+
+/* ---------- ORB MOVEMENT ---------- */
+
+@keyframes cwOrbOne {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.85);
+    }
+
+    50% {
+        transform:
+            translate3d(160px, 70px, 0)
+            scale(1.12);
+    }
+
+    100% {
+        transform:
+            translate3d(60px, 180px, 0)
+            scale(0.95);
+    }
+}
+
+
+@keyframes cwOrbTwo {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.9);
+    }
+
+    50% {
+        transform:
+            translate3d(-140px, 100px, 0)
+            scale(1.15);
+    }
+
+    100% {
+        transform:
+            translate3d(-40px, 220px, 0)
+            scale(0.95);
+    }
+}
+
+
+/* =====================================================
+   FLOATING PARTICLE FIELD
+   ===================================================== */
+
+.hero-content::before,
+.hero-content::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--cw-accent);
+
+    box-shadow:
+        120px 80px 0 rgba(54, 214, 195, 0.5),
+        260px 20px 0 rgba(77, 168, 255, 0.5),
+        400px 130px 0 rgba(54, 214, 195, 0.35),
+        520px 60px 0 rgba(77, 168, 255, 0.4),
+        180px 200px 0 rgba(54, 214, 195, 0.3);
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    animation:
+        cwParticles 9s ease-in-out infinite alternate;
+}
+
+.hero-content::before {
+    left: 20px;
+    top: 30px;
+}
+
+.hero-content::after {
+    left: 60px;
+    top: 100px;
+
+    transform: scale(0.7);
+
+    animation-delay: -4s;
+}
+
+
+@keyframes cwParticles {
+
+    from {
+        transform:
+            translate3d(0, 15px, 0);
+        opacity: 0.25;
+    }
+
+    to {
+        transform:
+            translate3d(35px, -35px, 0);
+        opacity: 0.65;
+    }
+}
+
+
+/* =====================================================
+   MOVING HORIZONTAL LIGHT
+   ===================================================== */
+
+.hero-content {
+    position: relative;
+}
+
+.hero-content::marker {
+    display: none;
+}
+
+
+/* subtle animated line across background */
+.hero {
+    background-image:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(54, 214, 195, 0.025) 45%,
+            rgba(77, 168, 255, 0.06) 50%,
+            rgba(54, 214, 195, 0.025) 55%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(54, 214, 195, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(77, 168, 255, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #02070b,
+            #061824,
+            #07111f
+        );
+
+    background-size:
+        300% 300%,
+        100% 100%,
+        100% 100%,
+        100% 100%;
+
+    animation:
+        cwBackgroundFlow 18s ease-in-out infinite alternate;
+}
+
+
+@keyframes cwBackgroundFlow {
+
+    0% {
+        background-position:
+            0% 50%,
+            0% 0%,
+            0% 0%,
+            0% 0%;
+    }
+
+    100% {
+        background-position:
+            100% 50%,
+            100% 100%,
+            0% 100%,
+            0% 0%;
+    }
+}
+
+
+/* =====================================================
+   3D LOCALITY — MORE LIFE
+   ===================================================== */
+
+.map-preview {
+    animation:
+        cwLocalityFloat 6s ease-in-out infinite,
+        cwLocalityGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes cwLocalityFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes cwLocalityGlow {
+
+    from {
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.30),
+            0 0 25px rgba(54, 214, 195, 0.05);
+    }
+
+    to {
+        box-shadow:
+            0 30px 85px rgba(0, 0, 0, 0.38),
+            0 0 50px rgba(54, 214, 195, 0.16);
+    }
+}
+
+/* =====================================================
+   CIVICWORLD — LIVING CIVIC NETWORK
+   ===================================================== */
+
+.civic-network {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+/* ---------- DIGITAL GRID ---------- */
+
+.network-grid {
+    position: absolute;
+    inset: -20%;
+
+    background-image:
+        linear-gradient(
+            rgba(54, 214, 195, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(54, 214, 195, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    transform:
+        perspective(500px)
+        rotateX(62deg)
+        translateY(15%);
+
+    transform-origin: center bottom;
+
+    opacity: 0.65;
+
+    animation:
+        civicGridMove 12s linear infinite;
+}
+
+@keyframes civicGridMove {
+
+    from {
+        transform:
+            perspective(500px)
+            rotateX(62deg)
+            translateY(0);
+    }
+
+    to {
+        transform:
+            perspective(500px)
+            rotateX(62deg)
+            translateY(80px);
+    }
+}
+
+
+/* ---------- NETWORK LINES ---------- */
+
+.network-line {
+    position: absolute;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(54, 214, 195, 0.05),
+            rgba(54, 214, 195, 0.45),
+            rgba(77, 168, 255, 0.25),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(54, 214, 195, 0.25);
+
+    transform-origin: left center;
+
+    animation:
+        networkLineFlow 5s ease-in-out infinite;
+}
+
+.line-1 {
+    width: 55%;
+    left: -5%;
+    top: 25%;
+    transform: rotate(12deg);
+}
+
+.line-2 {
+    width: 65%;
+    right: -10%;
+    top: 42%;
+    transform: rotate(-18deg);
+
+    animation-delay: -2s;
+}
+
+.line-3 {
+    width: 45%;
+    left: 15%;
+    top: 62%;
+    transform: rotate(-8deg);
+
+    animation-delay: -3s;
+}
+
+.line-4 {
+    width: 60%;
+    left: 35%;
+    top: 72%;
+    transform: rotate(16deg);
+
+    animation-delay: -1s;
+}
+
+.line-5 {
+    width: 40%;
+    left: 5%;
+    top: 82%;
+    transform: rotate(-22deg);
+
+    animation-delay: -4s;
+}
+
+@keyframes networkLineFlow {
+
+    0%,
+    100% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+}
+
+
+/* ---------- CIVIC NODES ---------- */
+
+.network-node {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--cw-accent);
+
+    box-shadow:
+        0 0 8px var(--cw-accent),
+        0 0 22px rgba(54, 214, 195, 0.65);
+
+    animation:
+        civicNodePulse 2.8s ease-in-out infinite;
+}
+
+.node-1 {
+    left: 18%;
+    top: 27%;
+}
+
+.node-2 {
+    left: 43%;
+    top: 38%;
+
+    animation-delay: -0.8s;
+}
+
+.node-3 {
+    left: 72%;
+    top: 25%;
+
+    animation-delay: -1.4s;
+}
+
+.node-4 {
+    left: 61%;
+    top: 64%;
+
+    animation-delay: -2s;
+}
+
+.node-5 {
+    left: 25%;
+    top: 76%;
+
+    animation-delay: -2.4s;
+}
+
+@keyframes civicNodePulse {
+
+    0%,
+    100% {
+        transform: scale(0.7);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 1;
+    }
+}
+
+
+/* ---------- MOVING DATA SIGNALS ---------- */
+
+.data-pulse {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 20px var(--cw-accent),
+        0 0 40px rgba(54, 214, 195, 0.55);
+
+    animation:
+        dataTravel 7s linear infinite;
+}
+
+.pulse-1 {
+    left: 8%;
+    top: 25%;
+}
+
+.pulse-2 {
+    left: 35%;
+    top: 50%;
+
+    animation-delay: -2.5s;
+}
+
+.pulse-3 {
+    left: 60%;
+    top: 70%;
+
+    animation-delay: -5s;
+}
+
+
+@keyframes dataTravel {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.6);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translate3d(280px, -90px, 0)
+            scale(1);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate3d(620px, 80px, 0)
+            scale(0.5);
+
+        opacity: 0;
+    }
+}
+
+
+/* ---------- FADE THE NETWORK BEHIND CONTENT ---------- */
+
+.hero-content,
+.hero .map-preview {
+    z-index: 5;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+    .network-grid {
+        opacity: 0.3;
+    }
+
+    .network-line {
+        opacity: 0.5;
+    }
+
+    .data-pulse {
+        transform: scale(0.7);
+    }
+}
+
+/* =====================================================
+   CIVICWORLD — SCROLL CARD REVEAL
+   ===================================================== */
+
+/* =====================================================
+   CIVICWORLD — STRONG SCROLL MOTION
+   ===================================================== */
+
+.scroll-card {
+    opacity: 0;
+
+    transform:
+        translateY(120px)
+        scale(0.82)
+        rotateX(12deg);
+
+    filter: blur(10px);
+
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s ease;
+
+    transform-origin: center bottom;
+}
+
+.scroll-card.show {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1)
+        rotateX(0deg);
+
+    filter: blur(0);
+}
+
+
+/* ---------- STAGGERED ARRIVAL ---------- */
+
+.scroll-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.scroll-card:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.scroll-card:nth-child(3) {
+    transition-delay: 0.30s;
+}
+
+.scroll-card:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+.scroll-card:nth-child(5) {
+    transition-delay: 0.60s;
+}
+
+
+/* ---------- FACILITY CARDS ---------- */
+
+.facility-card.scroll-card {
+    transform:
+        translateY(120px)
+        scale(0.75)
+        rotate(-4deg);
+
+    opacity: 0;
+}
+
+.facility-card.scroll-card.show {
+    transform:
+        translateY(0)
+        scale(1)
+        rotate(0deg);
+
+    opacity: 1;
+}
+
+
+/* ---------- PARTICIPATION CONTENT ---------- */
+
+.participation .scroll-card {
+    transform:
+        translateX(-120px)
+        translateY(40px)
+        scale(0.88);
+
+    opacity: 0;
+}
+
+.participation .scroll-card.show {
+    transform:
+        translateX(0)
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* ---------- STRONG HOVER ---------- */
+
+.facility-card.scroll-card.show:hover {
+    transform:
+        translateY(-12px)
+        scale(1.04)
+        rotate(0deg);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.38),
+        0 0 35px rgba(54, 214, 195, 0.16);
+}
+
+
+/* ---------- GLOW WHEN CARD ARRIVES ---------- */
+
+@keyframes civicCardGlow {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(54, 214, 195, 0);
+    }
+
+    40% {
+        box-shadow:
+            0 0 45px rgba(54, 214, 195, 0.22);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 rgba(54, 214, 195, 0);
+    }
+}
+
+.facility-card.scroll-card.show {
+    animation:
+        civicCardGlow 1.2s ease-out;
+}
+
+/* =====================================================
+   CIVICWORLD — FEEDBACK / COMPLAINT CARD MOTION
+   ===================================================== */
+
+/* Make the whole participation section feel alive */
+.participation {
+    perspective: 1200px;
+}
+
+
+/* All cards / content inside participation */
+.participation .scroll-card {
+    opacity: 0;
+
+    transform:
+        translateY(120px)
+        scale(0.78)
+        rotateX(14deg);
+
+    filter: blur(9px);
+
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s ease;
+}
+
+
+/* When scrolling reaches them */
+.participation .scroll-card.show {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1)
+        rotateX(0deg);
+
+    filter: blur(0);
+
+    animation:
+        feedbackArrival 1.1s ease-out;
+}
+
+
+/* Different entrance for each item */
+.participation .scroll-card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.participation .scroll-card:nth-child(2) {
+    transition-delay: 0.18s;
+}
+
+.participation .scroll-card:nth-child(3) {
+    transition-delay: 0.36s;
+}
+
+.participation .scroll-card:nth-child(4) {
+    transition-delay: 0.54s;
+}
+
+
+/* Arrival glow */
+@keyframes feedbackArrival {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(54, 214, 195, 0);
+    }
+
+    45% {
+        box-shadow:
+            0 0 50px rgba(54, 214, 195, 0.20);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 rgba(54, 214, 195, 0);
+    }
+}
+
+
+/* Feedback / complaint cards hover */
+.participation .scroll-card.show:hover {
+    transform:
+        translateY(-12px)
+        scale(1.035)
+        rotateX(0deg);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(54, 214, 195, 0.15);
+}
+
+
+/* Buttons inside the section */
+.participation button {
+    transition:
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.participation button:hover {
+    transform:
+        translateY(-6px)
+        scale(1.04);
+
+    box-shadow:
+        0 18px 40px rgba(54, 214, 195, 0.18);
+}
+
+
+/* Icons get a little movement too */
+.participation .scroll-card.show .icon {
+    animation:
+        feedbackIconPop 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes feedbackIconPop {
+
+    0% {
+        transform: scale(0.5) rotate(-12deg);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.15) rotate(4deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* =========================================================
+   CIVICWORLD ADMIN — PREMIUM MOTION UI
+   ========================================================= */
+
+.admin-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(54,214,195,.08), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(77,168,255,.08), transparent 30%),
+        linear-gradient(135deg, #02070b, #061824 55%, #07111f);
+    overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.admin-nav {
+    position: sticky;
+    top: 14px;
+    z-index: 100;
+
+    margin: 0 4%;
+    padding: 0 28px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px;
+
+    background: rgba(6,18,26,.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.28),
+        0 0 30px rgba(54,214,195,.06);
+
+    animation: adminNavIn .7s cubic-bezier(.16,1,.3,1) both;
+}
+
+.admin-logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+    color: white;
+}
+
+.admin-label {
+    padding: 8px 14px;
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    color: var(--cw-accent-light);
+    background: rgba(54,214,195,.08);
+    border: 1px solid rgba(54,214,195,.18);
+
+    box-shadow: 0 0 20px rgba(54,214,195,.08);
+}
+
+/* ---------- MAIN ---------- */
+
+.admin-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 70px 5% 100px;
+}
+
+/* ---------- HEADING ---------- */
+
+.admin-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 45px;
+
+    animation: adminFadeUp .8s cubic-bezier(.16,1,.3,1) .1s both;
+}
+
+.admin-heading span:first-child {
+    color: var(--cw-accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.admin-heading h1 {
+    margin: 8px 0;
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1;
+    letter-spacing: -2px;
+    color: white;
+}
+
+.admin-heading p {
+    margin: 0;
+    max-width: 600px;
+    color: var(--cw-muted);
+    line-height: 1.7;
+}
+
+.admin-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 15px;
+    border-radius: 999px;
+
+    color: rgba(255,255,255,.78);
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.10);
+
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cw-accent);
+    box-shadow:
+        0 0 8px var(--cw-accent),
+        0 0 20px rgba(54,214,195,.5);
+
+    animation: adminPulse 2s ease-in-out infinite;
+}
+
+/* ---------- STATS ---------- */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 24px;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,45,58,.78),
+            rgba(5,19,28,.72)
+        );
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow: 0 18px 45px rgba(0,0,0,.20);
+
+    opacity: 0;
+    transform: translateY(45px) scale(.94);
+
+    animation:
+        adminCardIn .8s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: .15s; }
+.stat-card:nth-child(2) { animation-delay: .25s; }
+.stat-card:nth-child(3) { animation-delay: .35s; }
+.stat-card:nth-child(4) { animation-delay: .45s; }
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: -70px;
+    top: -70px;
+
+    border-radius: 50%;
+    background: rgba(54,214,195,.09);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+.stat-card:hover {
+    transform: translateY(-7px) scale(1.015);
+    border-color: rgba(54,214,195,.28);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.30),
+        0 0 30px rgba(54,214,195,.08);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: rgba(54,214,195,.09);
+    border: 1px solid rgba(54,214,195,.15);
+
+    font-size: 25px;
+
+    transition: transform .3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.12) rotate(-4deg);
+}
+
+.stat-card p {
+    margin: 0 0 5px;
+    color: var(--cw-muted);
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    margin: 0;
+    color: white;
+    font-size: 30px;
+}
+
+/* ---------- DASHBOARD CARDS ---------- */
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.admin-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 26px;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17,40,53,.78),
+            rgba(4,17,25,.84)
+        );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 20px 55px rgba(0,0,0,.22);
+
+    opacity: 0;
+    transform: translateY(60px) scale(.96);
+
+    animation:
+        adminCardIn .8s cubic-bezier(.16,1,.3,1) .55s forwards;
+
+    transition:
+        transform .35s cubic-bezier(.16,1,.3,1),
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(54,214,195,.20);
+
+    box-shadow:
+        0 28px 65px rgba(0,0,0,.30),
+        0 0 30px rgba(54,214,195,.05);
+}
+
+.admin-card::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.045),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+    pointer-events: none;
+}
+
+.admin-card:hover::after {
+    left: 140%;
+    transition: left .8s ease;
+}
+
+.card-heading {
+    margin-bottom: 22px;
+}
+
+.card-heading h3 {
+    margin: 0 0 6px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: -.3px;
+}
+
+.card-heading p {
+    margin: 0;
+    color: var(--cw-muted);
+    font-size: 13px;
+}
+
+/* ---------- ISSUE ROWS ---------- */
+
+.issue-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+
+    transition:
+        transform .3s ease,
+        padding-left .3s ease;
+}
+
+.issue-row:last-child {
+    border-bottom: none;
+}
+
+.issue-row:hover {
+    transform: translateX(6px);
+    padding-left: 5px;
+}
+
+.issue-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.issue-info > span {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(54,214,195,.08);
+    border: 1px solid rgba(54,214,195,.12);
+
+    font-size: 18px;
+}
+
+.issue-info strong {
+    display: block;
+    color: white;
+    font-size: 14px;
+}
+
+.issue-info small {
+    display: block;
+    margin-top: 3px;
+    color: var(--cw-muted);
+}
+
+.issue-badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    background: rgba(54,214,195,.08);
+    border: 1px solid rgba(54,214,195,.15);
+    color: var(--cw-accent-light);
+
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.issue-row:hover .issue-badge {
+    transform: scale(1.06);
+    box-shadow: 0 0 18px rgba(54,214,195,.12);
+}
+
+/* ---------- AI SUMMARY ---------- */
+
+.ai-summary-card {
+    border-color: rgba(54,214,195,.18);
+}
+
+.ai-summary-card::before {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(54,214,195,.10);
+    filter: blur(35px);
+
+    animation: aiGlow 5s ease-in-out infinite alternate;
+}
+
+.ai-summary {
+    color: rgba(235,248,252,.78);
+    line-height: 1.7;
+}
+
+.ai-summary p {
+    margin: 0;
+}
+
+.ai-note {
+    margin-top: 18px;
+    padding: 12px 14px;
+
+    border-left: 2px solid var(--cw-accent);
+
+    background: rgba(54,214,195,.045);
+    color: rgba(230,244,250,.58);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Analyze button */
+
+.ai-summary-card button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--cw-accent),
+            var(--cw-blue)
+        ) !important;
+
+    color: #031116 !important;
+
+    border: none !important;
+    border-radius: 13px !important;
+
+    font-weight: 800 !important;
+
+    box-shadow: 0 10px 30px rgba(54,214,195,.16);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease !important;
+}
+
+.ai-summary-card button:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 15px 38px rgba(54,214,195,.28) !important;
+}
+
+/* ---------- PRIORITY MAP ---------- */
+
+.priority-map-placeholder {
+    min-height: 260px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(54,214,195,.12),
+            transparent 55%
+        ),
+        rgba(2,10,16,.55);
+
+    overflow: hidden;
+}
+
+.map-grid {
+    min-height: 260px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    padding: 20px;
+
+    background-image:
+        linear-gradient(
+            rgba(54,214,195,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(54,214,195,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    animation: mapGridMove 12s linear infinite;
+}
+
+.map-zone {
+    min-height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(54,214,195,.12);
+
+    background: rgba(54,214,195,.045);
+
+    color: rgba(240,250,252,.82);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.map-zone:hover {
+    transform: translateY(-5px) scale(1.02);
+
+    border-color: rgba(54,214,195,.35);
+
+    background: rgba(54,214,195,.09);
+
+    box-shadow: 0 10px 30px rgba(54,214,195,.08);
+}
+
+/* ---------- REPORTS ---------- */
+
+.reports-card {
+    grid-column: 1 / -1;
+    margin-top: 22px;
+}
+
+.reports-table {
+    overflow-x: auto;
+}
+
+.report-header,
+.report-row {
+    display: grid;
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 16px;
+    align-items: center;
+    min-width: 650px;
+}
+
+.report-header {
+    padding: 12px 15px;
+
+    color: rgba(230,244,250,.45);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.report-row {
+    padding: 16px 15px;
+
+    color: rgba(245,251,255,.82);
+
+    border-bottom: 1px solid rgba(255,255,255,.055);
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.report-row:hover {
+    background: rgba(54,214,195,.035);
+    transform: translateX(5px);
+}
+
+.status {
+    width: fit-content;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    transition: transform .25s ease;
+}
+
+.report-row:hover .status {
+    transform: scale(1.05);
+}
+
+.status.submitted {
+    color: #fbbf24;
+    background: rgba(251,191,36,.08);
+}
+
+.status.progress {
+    color: #60a5fa;
+    background: rgba(96,165,250,.08);
+}
+
+.status.completed {
+    color: #4ade80;
+    background: rgba(74,222,128,.08);
+}
+
+/* ---------- FILTER ---------- */
+
+.filter-button {
+    border: 1px solid rgba(54,214,195,.20) !important;
+    background: rgba(54,214,195,.07) !important;
+    color: var(--cw-accent-light) !important;
+
+    border-radius: 11px !important;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease !important;
+}
+
+.filter-button:hover {
+    transform: translateY(-3px);
+    border-color: rgba(54,214,195,.45) !important;
+
+    box-shadow:
+        0 10px 25px rgba(54,214,195,.10);
+}
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes adminNavIn {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes adminFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes adminCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(55px) scale(.94);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes adminPulse {
+    0%,100% {
+        transform: scale(.75);
+        opacity: .45;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+@keyframes aiGlow {
+    from {
+        transform: scale(.8);
+        opacity: .4;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: .9;
+    }
+}
+
+@keyframes mapGridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 40px 40px;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-card {
+        grid-column: auto;
+    }
+
+    .admin-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .admin-nav {
+        margin: 0 3%;
+        padding: 0 18px;
+    }
+
+    .admin-container {
+        padding: 50px 4% 70px;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-card {
+        padding: 20px;
+    }
+
+    .admin-heading h1 {
+        font-size: 40px;
+    }
+
+    .admin-label {
+        font-size: 9px;
+    }
+
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-nav,
+    .stat-card,
+    .admin-card,
+    .status-dot,
+    .ai-summary-card::before,
+    .map-grid {
+        animation: none !important;
+        transition: none !important;
+    }
+}
